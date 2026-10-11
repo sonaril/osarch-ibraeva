@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+
+# Virtual machine images and exports
+*.iso
+*.ova
+*.vdi
+*.vmdk
+*.qcow2
+
+# Temporary editor files
+*~
+*.swp
