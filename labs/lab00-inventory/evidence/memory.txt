@@ -1,0 +1,6 @@
+PS C:\WINDOWS\system32> Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer, Capacity, Speed, ConfiguredClockSpeed
+
+Manufacturer   Capacity Speed ConfiguredClockSpeed
+------------   -------- ----- --------------------
+Samsung      8589934592  6400                 5200
+Samsung      8589934592  6400                 5200
