@@ -1,0 +1,15 @@
+
+PS C:\WINDOWS\system32> Get-PhysicalDisk | Select-Object FriendlyName, MediaType, BusType, Size
+
+FriendlyName            MediaType BusType         Size
+------------            --------- -------         ----
+SKHynix_HFS512GEJ4X112N SSD       NVMe    512110190592
+
+
+PS C:\WINDOWS\system32> Get-Volume | Select-Object DriveLetter, Size, SizeRemaining
+
+DriveLetter        Size SizeRemaining
+-----------         ---- -------------
+          C 509722226688  330136182784
+              2097147904    1047842816
+
