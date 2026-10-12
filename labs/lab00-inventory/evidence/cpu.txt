@@ -1,0 +1,14 @@
+PS C:\WINDOWS\system32> Get-WmiObject Win32_Processor
+
+
+Caption           : Intel64 Family 6 Model 186 Stepping 2
+DeviceID          : CPU0
+Manufacturer      : GenuineIntel
+MaxClockSpeed     : 2400
+Name              : 13th Gen Intel(R) Core(TM) i7-13620H
+SocketDesignation : U3E1
+PS C:\WINDOWS\system32> (Get-WmiObject Win32_Processor).NumberOfCores
+10
+  PS C:\WINDOWS\system32> (Get-WmiObject Win32_Processor).NumberOfLogicalProcessors
+16
+  
