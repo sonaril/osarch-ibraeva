@@ -6,3 +6,6 @@ HyperVRequirementDataExecutionPreventionAvailable :
 HyperVRequirementSecondLevelAddressTranslation    :
 HyperVRequirementVirtualizationFirmwareEnabled    :
 HyperVRequirementVMMonitorModeExtensions          :
+
+PS C:\Users\Yeolke> (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled
+False
