@@ -1,11 +1,2 @@
-PS C:\WINDOWS\system32> Get-ComputerInfo -property "HyperV*"
-
-
-HyperVisorPresent                                 : True
-HyperVRequirementDataExecutionPreventionAvailable :
-HyperVRequirementSecondLevelAddressTranslation    :
-HyperVRequirementVirtualizationFirmwareEnabled    :
-HyperVRequirementVMMonitorModeExtensions          :
-
-PS C:\Users\Yeolke> (Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled
-False
+PS C:\Users\Yeolke> (Get-CimInstance Win32_ComputerSystem).HypervisorPresent
+True
