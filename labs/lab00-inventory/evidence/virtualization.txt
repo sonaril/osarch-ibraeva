@@ -1,0 +1,8 @@
+PS C:\WINDOWS\system32> Get-ComputerInfo -property "HyperV*"
+
+
+HyperVisorPresent                                 : True
+HyperVRequirementDataExecutionPreventionAvailable :
+HyperVRequirementSecondLevelAddressTranslation    :
+HyperVRequirementVirtualizationFirmwareEnabled    :
+HyperVRequirementVMMonitorModeExtensions          :
