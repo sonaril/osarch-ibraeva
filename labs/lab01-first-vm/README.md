@@ -38,8 +38,8 @@ The VM boots and runs Ubuntu Server 26.04.1 LTS with 2 vCPU, about 3.3 GB visibl
 - After deleting /etc/hostname and rebooting, `hostname` returned `sonaril` (the name from the installer) and `cat /etc/hostname` failed. Reverting to clean-install brought back `lab01-ibraeva`.
 
 ## Evidence
-[evidence/vm-settings.png](evidence/vm-settings.png) — CPU, memory and disk as configured
-[evidence/guest-release.png](evidence/guest-release.png) — Ubuntu Server is running in the guest
-[evidence/broken.png](evidence/broken.png) — the guest in its broken state
-[evidence/snapshot-list.png](evidence/snapshot-list.png) — the snapshot, after the rollback
-[evidence/after-rollback.png](evidence/after-rollback.png) — the snapshot, after the rollback
+- [evidence/vm-settings.png](evidence/vm-settings.png) — CPU, memory and disk as configured 
+- [evidence/guest-release.png](evidence/guest-release.png) — Ubuntu Server is running in the guest 
+- [evidence/broken.png](evidence/broken.png) — the guest in its broken state 
+- [evidence/snapshot-list.png](evidence/snapshot-list.png) — the snapshot, after the rollback 
+- [evidence/after-rollback.png](evidence/after-rollback.png) — the snapshot, after the rollback  
