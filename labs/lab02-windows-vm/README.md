@@ -32,7 +32,9 @@ lab01-ubuntu                  lab02-windows
 | What I noticed | — | Both machines lag a lot. Impossible to do anything|
 
 ## What did not work the first time
-NAT didn't work at first. Fixed by setting up a NAT Network
+The VM started with a black 640x480 screen and nothing happened. The cause was the virtual graphics setup, not the VM itself. Fix: changed the graphics controller (Settings -> Display -> Screen -> Graphics Controller) and restarted the VM; after that Windows Setup appeared.
+I removed lab02-windows while it was still running, and VirtualBox kept a broken entry: status "Aborted", disk lab02-windows.vdi "Inaccessible", error VERR_FILE_NOT_FOUND. The disk file did not exist any more. I removed the broken entry and created the VM again / attached a new 64 GB disk <choose what you did>.
+<Ubuntu -> Windows ping timed out, as described in step 6 — add it here if it happened to you.>
 
 ## Evidence
 - [evidence/ipconfig-windows.txt](evidence/ipconfig-windows.txt) — Windows address
