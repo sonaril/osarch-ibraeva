@@ -28,11 +28,11 @@ Why VirtualBox: it is free for this use (see https://www.virtualbox.org/wiki/Lic
 > Check: VirtualBox opens and shows an empty list of machines.
 
 ### Step 0.4. Create the shared network
-Both guests must be on one virtual network, so they can see each other and still reach the internet. In VirtualBox open *File → Tools → Network Manager*, go to the **NAT Networks** tab and click **Create**. Keep the default name and the default range (`10.0.2.0/24`).
+Both guests must be on one virtual network, so they can see each other and still reach the internet. In VirtualBox open *File → Tools → Network Manager*, go to the **NAT Networks** tab and click **Create**. Name it `osarch-net` and keep the default range (`10.0.2.0/24`).
 
 Why a **NAT Network** and not plain *NAT*: plain NAT gives every guest the internet but hides it from the other guests. A NAT Network gives both. Why not *Bridged*: a bridged guest shows up on your real network as a separate device, and many office and campus networks refuse unknown devices.
 
-> Check: the new network appears in the list.
+> Check: the network `osarch-net` appears in the list.
 
 ---
 
@@ -45,12 +45,15 @@ Click **New** and set:
 - Memory: **4096 MB**
 - Processors: **2**
 - Disk: **25 GB**, dynamically allocated
+- **Use EFI**: leave it **unticked** (plain BIOS). Ubuntu Server does not need UEFI here; the Windows guest in Part 2 does.
 
 Why these numbers: a server with no desktop runs well on 2 processors and 4 GB, and this leaves room for the Windows guest. A dynamic disk only takes space on your drive as it fills, so it does not claim 25 GB at once.
 
 > Check: the summary lists 2 CPUs, 4096 MB and a 25 GB disk.
 
 ![01-new-vm-wizard](evidence/01-new-vm-wizard.png)
+
+![01b-new-vm-wizard-disk](evidence/01b-new-vm-wizard-disk.png)
 
 ![02-disk-settings](evidence/02-disk-settings.png)
 
