@@ -1,0 +1,16 @@
+# Proves: the guest is Ubuntu Server 26.04.1 LTS, its hostname is lab01-ibraeva, and its root volume is 23 GB.
+# Source: transcribed from the guest console on 03.11.2026 (the screenshot is evidence/04-guest-console.png).
+
+sonaril@lab01-ibraeva:~$ uname -a
+Linux lab01-ibraeva 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026 x86_64 GNU/Linux
+sonaril@lab01-ibraeva:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 26.04.1 LTS
+Release:        26.04
+Codename:       resolute
+sonaril@lab01-ibraeva:~$ df -h /
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   23G  5.2G   17G  25% /
+sonaril@lab01-ibraeva:~$ hostname
+lab01-ibraeva
