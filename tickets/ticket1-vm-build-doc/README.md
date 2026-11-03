@@ -42,11 +42,12 @@
 | Ubuntu disk | 25 GB, dynamic | Grows only as used. |
 | Ubuntu install | Use an entire disk, OpenSSH server, no snaps | The virtual disk is empty; SSH lets me copy output out; snaps are not needed. |
 | Ubuntu root volume | Extended with `lvextend -r -l +100%FREE` | The installer used only about half the disk (11 GB of 25 GB). |
+| Ubuntu firmware | BIOS (UEFI off), no TPM | Ubuntu Server does not need UEFI, Secure Boot or a TPM; only Windows 11 does. |
 | Windows memory / CPUs | 4096 MB / 2 | 4 GB is the Windows 11 minimum. |
 | Windows disk | 64 GB, dynamic | 64 GB is the Windows 11 minimum disk size. |
 | Windows firmware | EFI + Secure Boot + virtual TPM | Windows 11 will not install without them. |
 | Windows graphics controller | VMSVGA | Fixed the black 640x480 screen on first start. |
-| Network | NAT Network, both guests | The guests see each other and keep internet access. |
+| Network | NAT Network `osarch-net`, both guests | The guests see each other and keep internet access. |
 | Windows firewall | Inbound ICMPv4 echo allowed | Otherwise Linux to Windows ping times out. |
 
 **Alternatives I considered**
@@ -69,18 +70,25 @@ Every file starts with a line `# Proves: ...`. Command output is kept as text; s
 
 | File | What it proves |
 |---|---|
-| [evidence/01-new-vm-wizard.png](evidence/01-new-vm-wizard.png) | The Linux VM was created with 2 CPUs and 4096 MB. |
-| [evidence/02-disk-settings.png](evidence/02-disk-settings.png) | The Linux VM has 4096 MB, 2 CPUs and a 25 GB disk. (It was taken in Lab 1, when the adapter was still plain NAT; the NAT Network is shown in 03.) |
-| [evidence/03-network-adapter.png](evidence/03-network-adapter.png) | The adapter is attached to the NAT Network. |
-| [evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) | The guest is Ubuntu Server 26.04.1 LTS, named `lab01-ibraeva`, with a root volume of about 23 GB. |
+| [evidence/01-new-vm-wizard.png](evidence/01-new-vm-wizard.png) | The wizard's hardware page: 4096 MB, 2 CPUs, "Use EFI" unticked. Taken in a wizard that was then cancelled, to show the settings without creating a third VM. |
+| [evidence/01b-new-vm-wizard-disk.png](evidence/01b-new-vm-wizard-disk.png) | The wizard's disk page: 25 GB VDI with "allocate full size" unticked, i.e. a dynamically allocated disk. |
+| [evidence/02-disk-settings.png](evidence/02-disk-settings.png) | The Linux VM `lab01-ubuntu` has 4096 MB, 2 CPUs and a 25 GB disk, and its adapter is on the NAT Network `osarch-net`. |
+| [evidence/03-network-adapter.png](evidence/03-network-adapter.png) | Adapter 1 of the Linux VM is attached to the NAT Network `osarch-net`; its MAC address `0800272EDA61` matches the `link/ether` line in `05`. |
+| [evidence/04-guest-uname.txt](evidence/04-guest-uname.txt) | The guest is Ubuntu Server 26.04.1 LTS (`lsb_release -a`, `uname -a`), its hostname is `lab01-ibraeva` (`hostname`), and its root volume is 23 GB (`df -h /`). Text transcribed from the console. |
+| [evidence/04-guest-console.png](evidence/04-guest-console.png) | The console screenshot that `04-guest-uname.txt` was transcribed from. |
 | [evidence/05-ping-between-guests.txt](evidence/05-ping-between-guests.txt) | Both guests' addresses (`10.0.2.5` and `10.0.2.3`), ping in both directions, and each guest reaching the internet (`1.1.1.1`). |
 | [evidence/06-snapshot-list.png](evidence/06-snapshot-list.png) | The Linux VM has the snapshot `clean-install`, shown after the rollback. |
-| [evidence/06b-snapshot-list-windows.png](evidence/06b-snapshot-list-windows.png) | The Windows VM has the snapshot `clean-install`. |
-| [evidence/07-windows-vm-settings.png](evidence/07-windows-vm-settings.png) | The Windows VM has EFI, TPM, 4096 MB, 2 CPUs. |
+| [evidence/06b-snapshot-list-windows.png](evidence/06b-snapshot-list-windows.png) | The Windows VM has the snapshot `clean-install` (taken 03.11.2026). |
+| [evidence/07-windows-vm-settings.png](evidence/07-windows-vm-settings.png) | The Windows VM `lab02-windows` has 4096 MB, UEFI, Secure Boot and TPM 2.0 turned on. |
 | [evidence/08-after-rollback.png](evidence/08-after-rollback.png) | After restoring the snapshot, the hostname is `lab01-ibraeva` again. |
+| [evidence/09-ubuntu-firmware.png](evidence/09-ubuntu-firmware.png) | The Linux VM uses plain BIOS: UEFI, Secure Boot and TPM are off. |
 | [review/](review/) | A second person followed BUILD.md (added in week 5). |
 
 ## 5. What I would do differently
+
+- Take the screenshots **while** building, step by step. In the labs I only photographed results, and I had to repeat the installer steps to document them.
+- Create the NAT Network first. Lab 1 used plain NAT and Lab 2 needed a NAT Network, so the first guest had to be reconfigured.
+- Never delete a VM while it is running. It left a broken entry and a lost disk file, and I had to recreate the Windows VM.
 
 - Take the screenshots **while** building, step by step. In the labs I only photographed results, and I had to repeat the installer steps to document them.
 - Create the NAT Network first. Lab 1 used plain NAT and Lab 2 needed a NAT Network, so the first guest had to be reconfigured.
