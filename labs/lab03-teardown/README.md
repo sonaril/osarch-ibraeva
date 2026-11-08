@@ -1,4 +1,4 @@
-**Lab 3 — Teardown, and the same machine from the command line**
+*Lab 3 — Teardown, and the same machine from the command line*
 
 
 
