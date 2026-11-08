@@ -174,8 +174,7 @@ Raw outputs: [windows-specs.txt](evidence/windows-specs.txt), [linux-specs.txt](
 ## What did not work the first time
 
 - I ran the Windows commands in PowerShell opened in `C:\WINDOWS\system32`, so `windows-specs.txt` was created there instead of in my repository, and `git add .` failed with "not a git repository" because I had not cloned the repository. I created the file again on the Desktop and uploaded it to the `evidence` folder on GitHub.
-- For the Linux file I added a port forwarding rule in the NAT Network (`2222` to `10.0.2.5:22`) and connected with `ssh`. The first connection worked, but `scp` then failed with "Connection reset by 127.0.0.1" and "Connection refused". <what you did: for example, you started the VM again and checked the rule, or you saved the `cat` output in Notepad as UTF-8>.
-
+- For the Linux file I added a port forwarding rule in the NAT Network (`2222` to `10.0.2.5:22`) and connected with `ssh`. The first connection worked, but `scp` then failed with "Connection reset by 127.0.0.1" and "Connection refused".I could not get `scp` to work again, so I copied the output of `cat linux-specs.txt` from the SSH session, pasted it into Notepad and saved it as `linux-specs.txt` in UTF-8. The content is the same command output, and I uploaded it to the `evidence` folder on GitHub.
 ## Evidence
 
 - [evidence/photos/](evidence/photos/) — the makers' photos of all ten parts
