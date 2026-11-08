@@ -1,0 +1,54 @@
+﻿PS> Get-CimInstance Win32_Processor | Select Name,NumberOfCores,NumberOfLogicalProcessors | Format-List
+
+
+Name                      : 13th Gen Intel(R) Core(TM) i7-13620H
+NumberOfCores             : 10
+NumberOfLogicalProcessors : 16
+
+
+
+
+PS> Get-CimInstance Win32_PhysicalMemory | Select DeviceLocator,Capacity,Speed,ConfiguredClockSpeed,SMBIOSMemoryType,FormFactor | Format-List
+
+
+DeviceLocator        : Controller0-ChannelA
+Capacity             : 8589934592
+Speed                : 6400
+ConfiguredClockSpeed : 5200
+SMBIOSMemoryType     : 35
+FormFactor           : 0
+
+DeviceLocator        : Controller1-ChannelA
+Capacity             : 8589934592
+Speed                : 6400
+ConfiguredClockSpeed : 5200
+SMBIOSMemoryType     : 35
+FormFactor           : 0
+
+
+
+
+PS> Get-PhysicalDisk | Select FriendlyName,MediaType,BusType,Size | Format-List
+
+
+FriendlyName : SKHynix_HFS512GEJ4X112N
+MediaType    : SSD
+BusType      : NVMe
+Size         : 512110190592
+
+
+
+
+PS> Get-Volume C | Select DriveLetter,Size,SizeRemaining | Format-List
+
+
+DriveLetter   : C
+Size          : 509722226688
+SizeRemaining : 191231987712
+
+
+
+
+PS> $env:PROCESSOR_ARCHITECTURE
+AMD64
+
