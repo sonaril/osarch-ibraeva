@@ -10,7 +10,7 @@ Date: 08.11.2026
 
 ### Processors
 
-**AMD Ryzen 5 7600** — [maker page](<img width="500" height="494" alt="image" src="https://github.com/user-attachments/assets/6b260c63-2656-48b0-b471-0acc022b4a9c" />) · photo: `evidence/photos/ryzen-5-7600.png`
+**AMD Ryzen 5 7600** — [maker page]( <img width="500" height="494" alt="image" src="https://github.com/user-attachments/assets/6b260c63-2656-48b0-b471-0acc022b4a9c" /> ) · photo: `evidence/photos/ryzen-5-7600.png`
 6 cores / 12 threads, Zen 4, 65 W TDP, integrated Radeon graphics.
 Connects to: socket **AM5** (LGA-style socket, pins on the board), DDR5 only, PCIe 5.0.
 Limits: AM5 boards only, no DDR4 support at all; official memory speed is below DDR5-5600 ⚠ . Ships with the Wraith Stealth cooler in the box.
