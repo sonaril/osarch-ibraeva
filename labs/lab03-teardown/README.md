@@ -7,7 +7,6 @@ Date: 08.11.2026
 ![AMD Ryzen 5 7600, maker photo](evidence/photos/ryzen-5-7600.png)
 
 **What it is:** desktop CPU, 6 cores / 12 threads, Zen 4, 65 W TDP, with integrated Radeon graphics.
-
 **Connects to:** socket AM5 (LGA1718), dual-channel DDR5, PCIe 5.0.
 **Limit:** AM5 boards and DDR5 only; it does not fit AM4 boards and cannot use DDR4. Ships with the AMD Wraith Stealth cooler.
 Maker page: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
@@ -152,28 +151,36 @@ Windows output is from my laptop (the host). Linux output is from the Ubuntu Ser
 
 | Fact | Windows (host laptop) | Linux (VM) |
 |---|---|---|
-| CPU model | 13th Gen Intel Core i7-13620H | <from `lscpu`> |
-| Cores / threads | 10 cores / 16 logical processors | 2 vCPU <from `lscpu`: cores and threads per core> |
-| Total memory | 16 GB | about 3.3 GB visible of the 4 GB assigned <from `free -h`> |
-| Memory modules, speed | 2 × 8 GB Samsung, rated 6400, configured 5200 | <from `dmidecode`: records or none> |
-| Disk | SKHynix_HFS512GEJ4X112N, SSD, NVMe, 512 GB | <model, `ROTA`, `TRAN` from `lsblk`>, 25 GB virtual disk |
-| Free space | <from `Get-Volume C` in `windows-specs.txt`> | <from `df -h /`>; root volume is 23 GB |
-| Architecture | AMD64 | <from `uname -m`> |
+| CPU model | 13th Gen Intel Core i7-13620H | 13th Gen Intel Core i7-13620H (as seen by the guest) |
+| Cores / threads | 10 cores / 16 logical processors | 2 vCPU: 2 cores per socket, 1 thread per core |
+| Total memory | 16 GB | 3.3 GiB visible of the 4 GB assigned |
+| Memory modules, speed | 2 × 8 GB Samsung LPDDR5 (SMBIOS type 35), one per channel; rated 6400, configured 5200 | no module records: `dmidecode` prints only the SMBIOS header |
+| Disk | SKHynix_HFS512GEJ4X112N, SSD, NVMe, 512 GB | VBOX HARDDISK, 25 GB, SATA, `ROTA=1` |
+| Free space | 191.2 GB free of 509.7 GB | 17 GB free of 23 GB (root volume) |
+| Architecture | AMD64 | x86_64 |
 
 Raw outputs: [windows-specs.txt](evidence/windows-specs.txt), [linux-specs.txt](evidence/linux-specs.txt).
 
 ### Where the names and values differ
 
-- **Cores and threads.** The i7-13620H has 6 Performance and 4 Efficient cores, so 10 cores give 16 logical processors. Windows calls them `NumberOfLogicalProcessors`, Linux calls them CPUs and "Thread(s) per core". The VM was given only 2 vCPUs, so Linux sees a much smaller machine.
-- **Two memory speeds on Windows.** `Speed` (6400) is the rated speed of the modules and `ConfiguredClockSpeed` (5200) is the speed they actually run at. A reader of a spec sheet sees 6400; the system runs at 5200.
-- **The VM describes the VM.** Linux reports a virtual disk and the memory given to the VM, and `dmidecode` inside a VM does not show the laptop's real memory modules.
-- **Disk type.** Windows reports `MediaType SSD` and `BusType NVMe`. Linux shows a rotational flag `ROTA` and a transport `TRAN`; a virtual disk may report itself differently from the NVMe drive underneath.
+- **Cores and threads.** The i7-13620H has 6 Performance and 4 Efficient cores, so 10 cores give 16 logical processors. Windows calls them `NumberOfLogicalProcessors`; Linux shows CPUs and "Thread(s) per core". The VM was given only 2 vCPUs, so Linux sees a much smaller machine.
+- **Two memory speeds on Windows.** `Speed` (6400) is the rated speed of the modules and `ConfiguredClockSpeed` (5200) is the speed they actually run at.
+- **Memory type.** Windows reports `SMBIOSMemoryType 35` (LPDDR5) with the locations `Controller0-ChannelA` and `Controller1-ChannelA`, so the memory is soldered on the board. Inside the VM, `dmidecode` shows no memory modules at all.
+- **Disk type.** Windows reports `MediaType SSD` and `BusType NVMe`. The VM reports `ROTA=1` (rotational, like an HDD) and `TRAN sata`, because it sees a virtual disk, not the NVMe drive underneath.
+- **The VM sees the CPU but not the hardware around it.** Linux shows the laptop's CPU model but also `Hypervisor vendor: KVM` and `Virtualization type: full`, so the guest knows it is virtual.
 
 ---
 
 ## What did not work the first time
 
+- I ran the Windows commands in PowerShell opened in `C:\WINDOWS\system32`, so `windows-specs.txt` was created there instead of in my repository, and `git add .` failed with "not a git repository" because I had not cloned the repository. I created the file again on the Desktop and uploaded it to the `evidence` folder on GitHub.
+- For the Linux file I added a port forwarding rule in the NAT Network (`2222` to `10.0.2.5:22`) and connected with `ssh`. The first connection worked, but `scp` then failed with "Connection reset by 127.0.0.1" and "Connection refused". <what you did: for example, you started the VM again and checked the rule, or you saved the `cat` output in Notepad as UTF-8>.
 
+## Evidence
+
+- [evidence/photos/](evidence/photos/) — the makers' photos of all ten parts
+- [evidence/windows-specs.txt](evidence/windows-specs.txt) — PowerShell commands and output on the host
+- [evidence/linux-specs.txt](evidence/linux-specs.txt) — `lscpu`, `free -h`, `dmidecode`, `lsblk`, `df -h`, `uname -m` inside the VM
 
 
 
