@@ -16,12 +16,13 @@ Date: 08.11.2026
 **Limit:** AM5 boards and DDR5 only; it will not fit AM4 boards and cannot use DDR4. Ships with the AMD Wraith Stealth cooler.
 Source: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
 
-**Intel Core i5-13400** — [Intel ARK](<img width="600" height="720" alt="image" src="https://github.com/user-attachments/assets/a5afe3a1-5e57-427e-964d-3ff637feeaa6" />
-) · photo: `evidence/photos/i5-13400.png`
-10 cores (6 P + 4 E) / 16 threads, Raptor Lake, 65 W base power, integrated UHD Graphics 730.
-Connects to: socket **LGA1700**, 600- and 700-series chipsets.
-Limits: supports DDR5-4800 *or* DDR4-3200 (decided by the board, never both), dual channel, 128 GB max; the memory type is fixed by the motherboard slots.
+### 2. Intel Core i5-13400
+![Intel Core i5-13400 processor, maker photo](evidence/photos/i5-13400.jpg)
 
+**What it is:** desktop CPU, 10 cores (6 Performance + 4 Efficient) / 16 threads, Raptor Lake, 65 W base power, integrated UHD Graphics 730.
+**Connects to:** socket LGA1700 on 600- and 700-series chipsets; dual-channel memory, either DDR4-3200 or DDR5-4800 depending on the board.
+**Limit:** LGA1700 boards only (not LGA1200, not AMD). It can use DDR4 or DDR5, but the board decides which; the two types cannot be mixed. The retail box includes an Intel Laminar RM1 cooler.
+Source: <https://www.intel.com/content/www/us/en/products/sku/230495/intel-core-i513400-processor-20m-cache-up-to-4-60-ghz/specifications.html>
 ### Motherboards
 
 **ASUS PRIME B650M-A** — [maker page](<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/50691f34-c2f1-469d-b9cc-bd98c3d12133" />
