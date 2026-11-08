@@ -1,7 +1,7 @@
 # Lab 3 — Teardown, and the same machine from the command line
 
 Pair: Nursaya Ibraeva   Driver first half: Nursaya
-Machine: <host: Lenovo IdeaPad Slim 5 16IRL8, Windows 11>, <guest: lab01-ubuntu (Ubuntu Server, VirtualBox)>
+Machine: <host: Lenovo IdeaPad Slim 5 16IRL8, Windows 11>, <guest: Ubuntu Server 26.04.1 LTS in VirtualBox (VM `lab01-ubuntu`)>
 Date: 08.11.2026
 
 ---
@@ -11,9 +11,10 @@ Date: 08.11.2026
 ### Processors
 
 **AMD Ryzen 5 7600** — [maker page]( <img width="500" height="494" alt="image" src="https://github.com/user-attachments/assets/6b260c63-2656-48b0-b471-0acc022b4a9c" /> ) · photo: `evidence/photos/ryzen-5-7600.png`
-6 cores / 12 threads, Zen 4, 65 W TDP, integrated Radeon graphics.
-Connects to: socket **AM5** (LGA-style socket, pins on the board), DDR5 only, PCIe 5.0.
-Limits: AM5 boards only, no DDR4 support at all; official memory speed is below DDR5-5600 ⚠ . Ships with the Wraith Stealth cooler in the box.
+**What it is:** desktop CPU, 6 cores / 12 threads, Zen 4, 65 W TDP, with integrated Radeon graphics.
+**Connects to:** socket AM5 (LGA1718), dual-channel DDR5, PCIe 5.0.
+**Limit:** AM5 boards and DDR5 only; it will not fit AM4 boards and cannot use DDR4. Ships with the AMD Wraith Stealth cooler.
+Source: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
 
 **Intel Core i5-13400** — [Intel ARK](<img width="600" height="720" alt="image" src="https://github.com/user-attachments/assets/a5afe3a1-5e57-427e-964d-3ff637feeaa6" />
 ) · photo: `evidence/photos/i5-13400.png`
