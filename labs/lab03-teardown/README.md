@@ -7,6 +7,7 @@ Date: 08.11.2026
 ![AMD Ryzen 5 7600, maker photo](evidence/photos/ryzen-5-7600.png)
 
 **What it is:** desktop CPU, 6 cores / 12 threads, Zen 4, 65 W TDP, with integrated Radeon graphics.
+
 **Connects to:** socket AM5 (LGA1718), dual-channel DDR5, PCIe 5.0.
 **Limit:** AM5 boards and DDR5 only; it does not fit AM4 boards and cannot use DDR4. Ships with the AMD Wraith Stealth cooler.
 Maker page: <https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html>
