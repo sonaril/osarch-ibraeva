@@ -20,7 +20,9 @@ PartitionNumber DriveLetter Type           Size
 
 PS C:\Users\sonaril> Get-Volume -DriveLetter E
 
-<ВСТАВЬ СЮДА вывод Get-Volume -DriveLetter E из Windows-VM>
+DriveLetter FriendlyName FileSystemType DriveType HealthStatus OperationalStatus
+----------- ------------ -------------- --------- ------------ -----------------
+E           LabDisk      NTFS           Fixed     Healthy      OK
 ```
 GPT. MBR is limited to 2 TB and four primary partitions, GPT keeps a backup of its partition table at the end of the disk, and Windows 11 itself boots from GPT/UEFI (disk 0 is GPT too). Partition 1 is the 16 MB Reserved (MSR) partition that Windows creates automatically on every GPT disk, which is why my NTFS partition starts at 16 MB. I have no reason to use MBR on a new virtual disk.
 
@@ -52,9 +54,27 @@ Full output: [evidence/lsblk-before.txt](evidence/lsblk-before.txt)
 ```
 $ lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
 
-<ВСТАВЬ СЮДА вывод lsblk из Linux-VM: md0 должен быть под sdb1 и sdd1, смонтирован в /mnt/mirror; sdc1 без массива>
+NAME                       SIZE TYPE  FSTYPE            MOUNTPOINTS
+loop0                     66.8M loop  squashfs          /snap/core24/2124
+loop1                     66.8M loop  squashfs          /snap/core24/1643
+loop2                      1.5M loop  squashfs          /snap/hwctl/123
+loop3                      1.5M loop  squashfs          /snap/hwctl/131
+loop4                     50.1M loop  squashfs          /snap/snapd/27710
+sda                         25G disk
+├─sda1                       1M part
+├─sda2                       2G part  ext4              /boot
+└─sda3                      23G part  LVM2_member
+  └─ubuntu--vg-ubuntu--lv   23G lvm   ext4              /
+sdb                          2G disk
+└─sdb1                       2G part  linux_raid_member
+  └─md0                      2G raid1 ext4
+sdc                          2G disk
+└─sdc1                       2G part  linux_raid_member
+sdd                          2G disk
+└─sdd1                       2G part  linux_raid_member
+  └─md0                      2G raid1 ext4
+sr0                       1024M rom
 ```
-Full output: [evidence/lsblk-after.txt](evidence/lsblk-after.txt)
 
 ## What I did
 Creating the disk partitions (the same for sdb, sdc and sdd, in a for loop)
