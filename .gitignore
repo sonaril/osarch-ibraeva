@@ -10,4 +10,4 @@ Thumbs.db
 
 # Temporary editor files
 *~
-*.swp
+*.swp.~lock.*
