@@ -1,0 +1,15 @@
+PS> Get-CimInstance Win32_Process -Filter 'ProcessId=9592' | Select-Object ProcessId, ParentProcessId, CommandLine | Format-List
+
+
+ProcessId       : 9592
+ParentProcessId : 12116
+CommandLine     : "C:\Users\sonaril\AppData\Local\Programs\Python\Python312\python.exe" -m http.server 8000
+
+
+
+PS> Get-Process -Id 12116 | Select-Object Id, ProcessName
+
+   Id ProcessName
+   -- -----------
+12116 powershell 
+
