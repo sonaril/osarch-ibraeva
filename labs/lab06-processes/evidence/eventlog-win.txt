@@ -1,0 +1,8 @@
+PS> Get-WinEvent -FilterHashtable @{LogName='System'; ProviderName='Microsoft-Windows-Resource-Exhaustion-Detector'} -MaxEvents 5 | Format-List TimeCreated, Id, Message
+No events were found that match the specified selection criteria.
+PS> Get-WinEvent -ListProvider Microsoft-Windows-Resource-Exhaustion-Detector | Select-Object Name
+
+Name                                          
+----                                          
+Microsoft-Windows-Resource-Exhaustion-Detector
+
