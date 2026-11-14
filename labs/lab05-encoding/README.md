@@ -1,6 +1,6 @@
 # Lab 5 — Encoding forensics
 
-Name: <имя> · Date: 14.11.2026 · Tools: Git Bash (file, xxd, iconv), Excel, LibreOffice Calc
+Name: Ibraeva Nursaya · Date: 14.11.2026 · Tools: Git Bash (file, xxd, iconv), Excel, LibreOffice Calc
 
 ## What I received
 - Excel: Russian text is readable, Kazakh letters are replaced with look-alikes ("Әбдірахманова" shows as "Јбдірахманова").
