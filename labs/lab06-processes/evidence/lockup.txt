@@ -1,0 +1,25 @@
+Nov 14 19:03:05 lab01-ibraeva kernel: NMI watchdog: Perf NMI watchdog permanently disabled
+Nov 14 19:07:31 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+Nov 14 19:07:50 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+Nov 14 19:10:05 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 7 times, consider switching to WQ_UNBOUND
+Nov 14 19:22:13 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 11 times, consider switching to WQ_UNBOUND
+Nov 14 19:24:41 lab01-ibraeva kernel: clocksource: Long readout interval, skipping watchdog check: cs_nsec: 2378971265 wd_nsec: 2378970661
+Nov 14 19:24:51 lab01-ibraeva kernel: clocksource: Long readout interval, skipping watchdog check: cs_nsec: 10257810965 wd_nsec: 10257808347
+Nov 14 19:30:06 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 264s! [swapper/0:0]
+Nov 14 19:30:06 lab01-ibraeva kernel: rcu: INFO: rcu_preempt self-detected stall on CPU
+Nov 14 19:30:06 lab01-ibraeva kernel: rcu: rcu_preempt kthread timer wakeup didn't happen for 284027 jiffies! g29701 f0x0 RCU_GP_WAIT_FQS(5) ->state=0x402
+Nov 14 19:30:06 lab01-ibraeva kernel: rcu: rcu_preempt kthread starved for 284030 jiffies! g29701 f0x0 RCU_GP_WAIT_FQS(5) ->state=0x402 ->cpu=0
+Nov 14 19:30:06 lab01-ibraeva kernel: rcu:         Unless rcu_preempt kthread gets sufficient CPU time, OOM is now expected behavior.
+Nov 14 19:30:06 lab01-ibraeva kernel: task:rcu_preempt     state:I stack:0     pid:15    tgid:15    ppid:2      task_flags:0x208040 flags:0x00080000
+Nov 14 19:30:06 lab01-ibraeva kernel: clocksource: Long readout interval, skipping watchdog check: cs_nsec: 284071422953 wd_nsec: 284071353944
+Nov 14 19:30:06 lab01-ibraeva systemd[1]: snapd.service: Watchdog timeout (limit 5min)!
+Nov 14 19:30:06 lab01-ibraeva systemd[1]: snapd.service: Failed with result 'watchdog'.
+Nov 14 19:30:06 lab01-ibraeva systemd[1]: systemd-resolved.service: Failed with result 'watchdog'.
+Nov 14 19:30:06 lab01-ibraeva systemd[1]: systemd-journald.service: Failed with result 'watchdog'.
+Nov 14 19:34:50 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [stress-ng-vm:2587]
+Nov 14 19:34:50 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#1 stuck for 22s! [stress-ng-vm:2588]
+Nov 14 19:35:53 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 19 times, consider switching to WQ_UNBOUND
+Nov 14 19:43:23 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 42s! [stress-ng-vm:3185]
+Nov 14 19:43:23 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#1 stuck for 42s! [stress-ng-vm:3186]
+Nov 14 19:47:37 lab01-ibraeva kernel: watchdog: BUG: soft lockup - CPU#1 stuck for 36s! [snapd:2309]
+Nov 14 19:58:26 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 35 times, consider switching to WQ_UNBOUND

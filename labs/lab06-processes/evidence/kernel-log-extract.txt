@@ -1,0 +1,22 @@
+Nov 14 19:58:03 lab01-ibraeva kernel: workqueue: blk_mq_run_work_fn hogged CPU for >10000us 259 times, consider switching to WQ_UNBOUND
+Nov 14 19:58:26 lab01-ibraeva kernel: workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 35 times, consider switching to WQ_UNBOUND
+Nov 14 19:58:29 lab01-ibraeva kernel: workqueue: blk_mq_run_work_fn hogged CPU for >10000us 515 times, consider switching to WQ_UNBOUND
+Nov 14 19:58:37 lab01-ibraeva kernel: stress-ng-vm invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=1000
+Nov 14 19:58:37 lab01-ibraeva kernel: CPU: 0 UID: 1000 PID: 4068 Comm: stress-ng-vm Tainted: G             L      7.0.0-43-generic #43-Ubuntu PREEMPT(lazy) 
+Nov 14 19:58:37 lab01-ibraeva kernel: Tainted: [L]=SOFTLOCKUP
+Nov 14 19:58:37 lab01-ibraeva kernel: Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Nov 14 19:58:37 lab01-ibraeva kernel: Call Trace:
+Nov 14 19:58:37 lab01-ibraeva kernel:  <TASK>
+Nov 14 19:58:37 lab01-ibraeva kernel:  show_stack+0x49/0x60
+Nov 14 19:58:37 lab01-ibraeva kernel:  dump_stack_lvl+0x5f/0x90
+Nov 14 19:58:37 lab01-ibraeva kernel:  dump_stack+0x10/0x18
+--
+Nov 14 19:58:37 lab01-ibraeva kernel: [   4068]  1000  4068   585047   168734   168604      130         0  3514368   258657          1000 stress-ng-vm
+Nov 14 19:58:37 lab01-ibraeva kernel: [   4069]  1000  4069   585047   183440   183310      130         0  3653632   261449          1000 stress-ng-vm
+Nov 14 19:58:37 lab01-ibraeva kernel: [   4111]  1000  4111     4413     1017      316      701         0    77824        0             0 sleep
+Nov 14 19:58:37 lab01-ibraeva kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-4.scope,task=stress-ng-vm,pid=4069,uid=1000
+Nov 14 19:58:37 lab01-ibraeva kernel: Out of memory: Killed process 4069 (stress-ng-vm) total-vm:2340188kB, anon-rss:733240kB, file-rss:520kB, shmem-rss:0kB, UID:1000 pgtables:3568kB oom_score_adj:1000
+Nov 14 20:03:00 lab01-ibraeva kernel: workqueue: drain_vmap_area_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+Nov 14 20:11:13 lab01-ibraeva kernel: workqueue: drain_vmap_area_work hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+Nov 14 20:19:07 lab01-ibraeva kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 515 times, consider switching to WQ_UNBOUND
+Nov 14 20:19:59 lab01-ibraeva kernel: workqueue: drain_vmap_area_work hogged CPU for >10000us 7 times, consider switching to WQ_UNBOUND
