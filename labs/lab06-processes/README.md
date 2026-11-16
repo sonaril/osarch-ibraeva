@@ -86,11 +86,10 @@ Memory figures (`free -h`, from `evidence/memory-pressure.txt`):
 
 | | Before | During (worst) | After |
 |---|---|---|---|
-| Available | 1.3 GiB | **15 MiB** (19:58:49) | 1.3 GiB (from 19:58:53 until the last sample, 20:19:02) |
-| Swap used | 0 B | **2.0 GiB — swap full** (19:58:35) | 12 MiB (19:58:53), 11 MiB (20:19:02) |
+| Available | 1.3 GiB (BEFORE block, 19:15:59) | **15 MiB** (19:58:49) | 1.2 GiB (AFTER block, 20:34:09) |
+| Swap used | 0 B | **2.0 GiB — swap full** (19:58:35) | 10 MiB (AFTER block, 20:34:09) |
 
-During the 70–120% runs swap used peaked at only 391 MiB. I did not append a separate `AFTER` block; "After" is the first and the last sample of the recording loop after the kill.
-
+During the 70–120% runs swap used peaked at only 391 MiB and available memory never went below 250 MiB. The recording starts with a `BEFORE` block (`free -h` and `swapon --show`, 19:15:59) and ends with an `AFTER` block (20:34:09). Swap did not go back to 0: about 10 MiB of idle pages stay in it.
 What happened (times from `memory-pressure.txt`):
 
 - 19:57:03 — marker line written; `stress-ng` for 400% was typed a little later and started at about 19:57:48.
