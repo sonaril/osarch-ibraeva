@@ -1,5 +1,11 @@
 # osarch-ibraeva
+AI Assistance Disclosure
 
+Per the course academic integrity policy, all use of AI assistants across labs and tickets is declared below[cite: 12, 13, 16]:
+
+| Assignment | Tool Used | Purpose / What It Was Used For |
+| :--- | :--- | :--- |
+| Ticket 2 (`ticket2-office-spec`) | Gemini | Structuring the 5-section report (`README.md`), build justifications (`builds.md`), `budget.csv` schema, and `pcpartpicker-links.md`; verifying component compatibility and budget totals[cite: 12, 13, 15, 16]. |
 ## Статус
 
 Обновлено: 2026-10-11
