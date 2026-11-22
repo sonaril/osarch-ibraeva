@@ -30,15 +30,4 @@ web-developer,Monitor,Xiaomi Monitor A24i 23.8" IPS ELA5444EU,45990,https://kasp
 web-developer,OS,Ubuntu 26.04.1 LTS Desktop,0,https://ubuntu.com/download/desktop,2026-11-22
 web-developer,SUBTOTAL,Web Developer Build Total,561171,Sum of web-developer rows,2026-11-22
 designer,CPU,Intel Core i5-12400 OEM,78378,https://itmag.kz/p/72397-processor-intel-core-i5-12400-1700/,2026-11-22
-designer,Cooler,ID-COOLING SE-802-SD V3,4360,https://dns-shop.kz/product/4e60afe368b9ed20/kuler-dla-processora-id-cooling-se-802-sd-v3-cernyj/,2026-11-22
-designer,Motherboard,GIGABYTE H610M K DDR4,31884,https://kaspi.kz/shop/p/gigabyte-h610m-k-ddr4-109704423/,2026-11-22
-designer,Memory,Kingston Fury Beast KF436C18BBK2/32 32GB (2x16GB) DDR4,295730,https://kaspi.kz/shop/p/kingston-fury-beast-kf436c18bbk2-32-32gb-102893492/,2026-11-22
-designer,Storage,Samsung 990 PRO 1000GB M.2 NVMe SSD,141150,https://dns-shop.kz/product/39779619c38e0fd2/1000-gb-m2-nvme-nakopitel-samsung-990-pro-mz-v9p1t0bw/,2026-11-22
-designer,GPU,GIGABYTE GeForce RTX 3060 GAMING OC 12GB,234000,https://dns-shop.kz/product/1110e3f5aef22eb1/videokarta-gigabyte-geforce-rtx-3060-gaming-oc-lhr-gv-n3060gaming-oc-12gd-rev20/,2026-11-22
-designer,PSU,DEEPCOOL PF600 600W,22200,https://dns-shop.kz/product/16ed5812fa5ed763/blok-pitania-deepcool-pf600-r-pf600d-ha0b-eu-cernyj/,2026-11-22
-designer,Case,LIAN LI A3-mATX-WD,69999,https://kaspi.kz/shop/p/lian-li-a3-matx-wd-g99-a3x-wd-00-chernyi-135445510/,2026-11-22
-designer,Monitor,Dell Pro 27 QHD Monitor E2726DS 27" IPS,101746,https://itmag.kz/p/139826-dell-pro-27-qhd-monitor-e2726ds-ips-2560/,2026-11-22
-designer,OS,Microsoft Windows 11 Professional 64-bit,46885,https://kaspi.kz/shop/p/microsoft-windows-11-professional-64-bit-111392900/,2026-11-22
-designer,SUBTOTAL,Designer Build Total,1026332,Sum of designer rows,2026-11-22
-prebuilt-reference,Prebuilt-PC,Tehnicom Core i3-12100 / UHD 730 / 64GB / 128GB SSD / Win 11 (reference quote),400676,https://kaspi.kz/shop/p/sistemnyi-blok-tehnicom-intel-core-i3-12100-intel-uhd-graphics-730-64-gb-ssd-128-gb-win-11-170485924/,2026-11-22
-ALL,GRAND TOTAL,All 4 Workstations + Monitors + OS,2893752,Within 3000000 KZT budget,2026-11-22
+designer,Cooler,ID-COOLING SE-802-SD V3,4360,
