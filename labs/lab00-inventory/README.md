@@ -1,22 +1,32 @@
-# Lab 00: Inventory
+# Lab 00 — Inventory your own machine
 
-## Цель
+| What | Value | Where I got it |
+| :--- | :--- | :--- |
+| CPU model | 13th Gen Intel(R) Core (TM) i7-13620H | `Get-WmiObject Win32_Processor` |
+| Core count | 10 | `(Get-WmiObject Win32_Processor).NumberOfCores` |
+| Thread count | 16 | `(Get-WmiObject Win32_Processor).NumberOfLogicalProcessors` |
+| Total memory | 16 GB (2 x 8,589,934,592 bytes) | `Get-CimInstance Win32_PhysicalMemory \| Select-Object Capacity` |
+| Memory modules | 2 (Samsung) | `(Get-CimInstance Win32_PhysicalMemory \| Measure-Object).Count` |
+| Memory speed | 6400 MT/s (Configured: 5200 MT/s) | `Get-CimInstance Win32_PhysicalMemory \| Select-Object Speed, ConfiguredClockSpeed` |
+| Disk model | SKHynix_HFS512GEJ4X112N | `Get-PhysicalDisk \| Select-Object FriendlyName` |
+| Disk type | NVMe SSD | `Get-PhysicalDisk \| Select-Object MediaType, BusType` |
+| Free space on VM volume (C:) | 330,136,182,784 bytes (~307 GiB / 330 GB) | `Get-Volume -DriveLetter C \| Select-Object SizeRemaining` |
+| Firmware type | <UEFI or BIOS> | `(Get-ComputerInfo).BiosFirmwareType` |
+| BIOS version & date | LENOVO LACN41WW, 9/23/2025 | `Get-CimInstance Win32_BIOS \| Select-Object Manufacturer, SMBIOSBIOSVersion, ReleaseDate` |
+| Hardware virtualization | Present: True; Firmware enabled: <True or False> | `(Get-CimInstance Win32_ComputerSystem).HypervisorPresent`; `(Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled` |
 
-Зафиксировать инвентаризацию системы и использованные команды.
+## What did not work the first time
 
-## Среда
+* In the initial submission, the inventory tables were pasted as screenshots instead of plain Markdown text, and `msinfo32` (a GUI utility) was referenced instead of a CLI command for the firmware type.
+* Checking only `HypervisorPresent` showed that the OS hypervisor was active, so I added `(Get-CimInstance Win32_Processor).VirtualizationFirmwareEnabled` and `(Get-ComputerInfo).BiosFirmwareType` to verify hardware virtualization and firmware mode directly from PowerShell.
 
-Заполнить сведения об операционной системе и окружении.
+## Evidence
 
-## Результаты
+* `evidence/cpu.txt` — Raw PowerShell output for CPU model, cores, and logical processors.
+* `evidence/memory.txt` — Raw PowerShell output for physical memory modules, capacity, and speed.
+* `evidence/diskmodel.txt` — Raw PowerShell output for physical disk model, bus type, and volume free space.
+* `evidence/firmwaretype.txt` — Raw PowerShell output for firmware type (`UEFI`/`BIOS`) and BIOS version/release date.
+* `evidence/virtualization.txt` — Raw PowerShell output for hardware virtualization status.
 
-Добавить выводы команд в `evidence/` в формате `.txt`, снимки экрана — в формате `.png`.
-
-## Вывод
-
-Заполнить после сбора данных.
-<img width="827" height="262" alt="image" src="https://github.com/user-attachments/assets/fd98ecb0-42af-4858-8417-54c78572f9af" />
-<img width="833" height="472" alt="image" src="https://github.com/user-attachments/assets/c9e81105-da7d-4adb-b80c-c6e23afc129b" />
-<img width="917" height="482" alt="image" src="https://github.com/user-attachments/assets/9dc275c6-34b2-4ce7-a39d-d8537fd1ea61" />
-<img width="877" height="407" alt="image" src="https://github.com/user-attachments/assets/38750330-8b32-4d6b-92b8-c67b9c8dcdb4" />
-
+* Initially, tables were pasted as images rather than Markdown text tables, and firmware type / firmware virtualization checks were missing from the CLI summary.
+* Raw command outputs are stored in `evidence/` (`cpu.txt`, `memory.txt`, `diskmodel.txt`, `firmwaretype.txt`, `virtualization.txt`)[cite: 13].
