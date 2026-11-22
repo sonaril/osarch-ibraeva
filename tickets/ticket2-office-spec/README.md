@@ -59,6 +59,4 @@ The **Designer** is the most likely to complain within a month if their design w
 ## 5. What I would do differently
 
 I would confirm the exact software list and monitor color/resolution requirements with each of the four roles (especially the designer and web developer) before buying parts, so I could verify whether a color-calibrated design monitor or different RAM/SSD split across the four machines fits better than my initial assumptions.
-## 5. What I would do differently
 
-I would confirm the exact software list and monitor color/resolution requirements with each of the four roles (especially the designer and web developer) before buying parts, so I could verify whether a color-calibrated design monitor or different RAM/SSD split across the four machines fits better than my initial assumptions[cite: 13, 14, 15].
